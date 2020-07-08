@@ -1,24 +1,39 @@
-let w=300,h=300;
-let vid;
-let duration=0;
+let w=300,h=300; //only 10 images 
+let img=[];
 let m;
-let preM;
-let offset;
+let angle=0;
+let q=1;
+let mn=-100;
+let mx=100;
+let z=0;
 function setup() {  
 	createCanvas(w,h);
-	pixelDensity(1);
-	vid = createVideo("data/a.mp4", videoLoaded);
-	vid.size(w,h);
-	vid.hide();
-}
-function videoLoaded() {
-  duration = vid.duration();
-}
-function draw() {
-  image(vid,0,0,w,h);
-  if(mouseX>0 && mouseX<w){
-  	m=map(mouseX,0,w,0,duration.toFixed(0));
-  	vid.time(m);
-  }
+	for(let i=0;i<100;i++){
+		img[i] = loadImage("data/picture1/Movie"+q+".jpg");
+	console.log(q);
+		q++;
+	}
 }
 
+function draw() {
+  background(200);
+  if(mouseX>0 && mouseX<w){
+  	m=map(mouseX,z,w,mn,mx);
+  }
+  createTarget();
+}
+
+function createTarget(){
+	for(let i=0; i<100; i++){
+		if((m>-(100-i) && m<=-(99-i))){
+		push();
+			scale(-1,1);
+			image(img[i], -width, 0,w,h); 
+		pop();
+		}else if(m<(100-i) && m>=(99-i)){
+		push();
+			image(img[i], 0, 0,w,h); 
+		pop();
+		}
+	}
+}
