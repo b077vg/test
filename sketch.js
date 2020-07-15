@@ -9,7 +9,7 @@ let z=0;
 function setup() {  
 	createCanvas(w,h);
 	for(let i=0;i<100;i++){
-		img[i] = loadImage("data/picture1/Movie"+q+".jpg");
+		img[i] = loadImage("data/Movie"+q+".jpg");
 	console.log(q);
 		q++;
 	}
