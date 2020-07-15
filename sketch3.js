@@ -25,7 +25,7 @@ function draw() {
 
 function createTarget(){
 	for(let i=0; i<100; i++){
-		if((m>-(100-i) && m<=-(99-i))){
+		if((m>=-(100-i) && m<=-(99-i))){
 		push();
 			scale(-1,1);
 			image(img[i], -width, 0,w,h); 
