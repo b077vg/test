@@ -1,4 +1,4 @@
-let w=300,h=300;              
+let w=410,h=728;              
 let img=[];
 let m;
 let angle=0;
@@ -11,7 +11,7 @@ function setup() {
 	canvas=createCanvas(w,h);
 	canvas.parent('canvas');
 	for(let i=0;i<200;i++){
-		img[i] = loadImage("data/picture1/Movie"+q+".jpg");	
+		img[i] = loadImage("data/Movie"+q+".jpg");	
 		q++;
 	}
 }
