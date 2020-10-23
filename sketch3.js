@@ -1,16 +1,17 @@
-let w=300,h=300; //only 10 images 
+let w=410,h=728; //not scale 200 
 let img=[];
 let m;
 let angle=0;
 let q=1;
-let mn=-100;
-let mx=100;
+let mn=0;
+let mx=200;
 let z=0;
+let canvas;
 function setup() {  
-	createCanvas(w,h);
-	for(let i=0;i<100;i++){
-		img[i] = loadImage("data/Movie"+q+".jpg");
-	console.log(q);
+	canvas=createCanvas(w,h);
+	canvas.parent('canvas');
+	for(let i=0;i<200;i++){
+		img[i] = loadImage("data/picture1/Movie"+q+".jpg");	
 		q++;
 	}
 }
@@ -19,20 +20,17 @@ function draw() {
   background(200);
   if(mouseX>0 && mouseX<w){
   	m=map(mouseX,z,w,mn,mx);
+	m=Math.round(m);
+	console.log(m);
   }
   createTarget();
 }
 
 function createTarget(){
-	for(let i=0; i<100; i++){
-		if((m>=-(100-i) && m<=-(99-i))){
+	for(let i=0; i<200; i++){
+		if(m==i){
 		push();
-			scale(-1,1);
-			image(img[i], -width, 0,w,h); 
-		pop();
-		}else if(m<(100-i) && m>=(99-i)){
-		push();
-			image(img[i], 0, 0,w,h); 
+			image(img[200-i], 0, 0,w,h); 
 		pop();
 		}
 	}
