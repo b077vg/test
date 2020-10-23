@@ -21,7 +21,6 @@ function draw() {
   if(mouseX>0 && mouseX<w){
   	m=map(mouseX,z,w,mn,mx);
 	m=Math.round(m);
-	console.log(m);
   }
   createTarget();
 }
