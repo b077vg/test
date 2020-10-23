@@ -1,4 +1,4 @@
-let w=350,h=640;              
+let w=300,h=300;              
 let img=[];
 let m;
 let angle=0;
