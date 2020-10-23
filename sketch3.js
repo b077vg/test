@@ -1,4 +1,4 @@
-let w=410,h=728; //not scale 200 
+let w=350,h=640;              
 let img=[];
 let m;
 let angle=0;
@@ -8,7 +8,7 @@ let mx=200;
 let z=0;
 let canvas;
 function setup() {  
-	canvas=createCanvas(410,728);
+	canvas=createCanvas(w,h);
 	canvas.parent('canvas');
 	for(let i=0;i<200;i++){
 		img[i] = loadImage("data/picture1/Movie"+q+".jpg");	
@@ -29,7 +29,7 @@ function createTarget(){
 	for(let i=0; i<200; i++){
 		if(m==i){
 		push();
-			image(img[200-i], 0, 0,410,728); 
+			image(img[200-i], 0, 0,w,h);
 		pop();
 		}
 	}
